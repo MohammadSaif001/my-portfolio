@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="about about-feature" aria-labelledby="about-title">
+    <div class="about-copy">
+        <p class="eyebrow">A LITTLE ABOUT ME</p>
+        <h1 id="about-title">Curious by nature. Building for what’s next.</h1>
+        {% for pragraph in about %}
+        <p class="about-intro">{{ pragraph }}</p>
+        {% endfor %}
+
+        <a class="btn about-cta" href="/">Explore the portfolio <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <aside class="about-note" aria-label="Areas of interest" tabindex="0">
+        <span class="about-mark" aria-hidden="true">&gt;_</span>
+        <h2>What I’m exploring</h2>
+        <ul class="interest-list">
+            <li><span>01</span> Data engineering</li>
+            <li><span>02</span> Networking</li>
+            <li><span>03</span> Machine learning</li>
+            <li><span>04</span> Web development</li>
+        </ul>
+    </aside>
+</section>
+
+{% endblock content %}

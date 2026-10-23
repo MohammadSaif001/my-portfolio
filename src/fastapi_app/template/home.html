@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="hero">
+    <section class="intro">
+        <p class="greeting">Hi, I’m Saif an</p>
+        <h1>DATA<br />ENGINEER</h1>
+        <p class="lead">
+            I’m learning how to build scalable data
+            pipelines and transform raw data into
+            valuable insights helping businesses
+            make data-driven decisions.
+        </p>
+        <div class="actions">
+            <a class="btn" href="work">View My Work</a>
+            <a class="btn" href="about">About Me</a>
+        </div>
+    </section>
+
+    <section class="photo">
+        <div class="frame">
+            <img src="/static/photo_.png" alt="Portrait of the data engineer wearing sunglasses and a zip-up jacket" />
+        </div>
+        <div class="caption">
+            <p>
+                Turning data<br />into decisions.<br />Let’s build<br />something
+                great !
+            </p>
+            <svg viewBox="0 0 72 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                aria-hidden="true">
+                <path d="M2 52 C 30 52, 56 40, 58 6" />
+                <path d="M50 14 L58 5 L65 15" />
+            </svg>
+        </div>
+    </section>
+
+    <section class="tools" id="tools" aria-labelledby="tools-heading">
+        <div class="tools-header">
+            <h2 id="tools-heading" class="tools-title">TOOLS I USE</h2>
+        </div>
+        <ul class="tools-grid">
+            <li class="tool-item">
+                <div class="icon-wrapper">
+                    <svg class="doodle-sparkle top-right" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2v6M12 16v6M2 12h6M16 12h6" />
+                    </svg>
+                    <img
+                        src="/static/images/python.svg"
+                        alt="Python logo"
+                        class="tool-icon"
+                        loading="lazy"
+                    />
+                    <span class="tool-shadow" aria-hidden="true"></span>
+                </div>
+                <span class="tool-label">Python</span>
+            </li>
+            <li class="tool-item">
+                <div class="icon-wrapper">
+                    <svg class="doodle-sparkle top-left" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 7l4 4M17 7l-4 4" />
+                    </svg>
+                    <img
+                        src="/static/images/pyspark.svg"
+                        alt="PySpark logo"
+                        class="tool-icon"
+                        loading="lazy"
+                    />
+                    <span class="tool-shadow" aria-hidden="true"></span>
+                </div>
+                <span class="tool-label">PySpark</span>
+                
+            </li>
+            <li class="tool-item">
+                <div class="icon-wrapper">
+                    <svg class="doodle-sparkle top-right" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <img
+                        src="/static/images/postgresql.svg"
+                        alt="PostgreSQL logo"
+                        class="tool-icon"
+                        loading="lazy"
+                    />
+                    <span class="tool-shadow" aria-hidden="true"></span>
+                </div>
+                <span class="tool-label">PostgreSQL</span>
+            </li>
+            <li class="tool-item">
+                <div class="icon-wrapper">
+                    <svg class="doodle-sparkle top-left" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3v4M12 17v4" />
+                    </svg>
+                    <img
+                        src="/static/images/databricks.svg"
+                        alt="Databricks logo"
+                        class="tool-icon"
+                        loading="lazy"
+                    />
+                    <span class="tool-shadow" aria-hidden="true"></span>
+                </div>
+                <span class="tool-label">Databricks</span>
+            </li>
+            <li class="tool-item">
+                <div class="icon-wrapper">
+                    <svg class="doodle-sparkle top-right" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2v6M12 16v6M2 12h6M16 12h6" />
+                    </svg>
+                    <img
+                        src="/static/images/git-plain.svg"
+                        alt="Git logo"
+                        class="tool-icon"
+                        loading="lazy"
+                    />
+                    <span class="tool-shadow" aria-hidden="true"></span>
+                </div>
+                <span class="tool-label">Git</span>
+            </li>
+        </ul>
+    </section>
+
+    <div class="action">
+        <a class="btn" href="connect"><span aria-hidden="true">&gt;</span> Let’s Connect</a>
+    </div>
+</div>
+{% endblock content %}

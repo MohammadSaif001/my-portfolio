@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="work-hero" aria-labelledby="work-title">
+    <div class="work-hero-copy">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h1 id="work-title">
+            Building Systems<br>
+            That Move Data.
+        </h1>
+        <p class="about-intro">
+            Projects built around data pipelines, transformation,
+            storage, and analytics — from raw data to reliable,
+            analytics-ready datasets.
+        </p>
+    </div>
+    <div class="work-hero-visual" aria-label="Data engineering workflow">
+        <div class="workflow-label">
+            HOW I BUILD
+        </div>
+        <div class="workflow">
+            <div class="workflow-step">
+                <span class="workflow-number">
+                    01
+                </span>
+                <div>
+                    <strong>RAW DATA</strong>
+                    <small>Sources &amp; files</small>
+                </div>
+            </div>
+            <div class="workflow-arrow" aria-hidden="true">
+                ↓
+            </div>
+            <div class="workflow-step">
+                <span class="workflow-number">
+                    02
+                </span>
+                <div>
+                    <strong>INGEST</strong>
+                    <small>Collect &amp; load</small>
+                </div>
+            </div>
+            <div class="workflow-arrow" aria-hidden="true">
+                ↓
+            </div>
+            <div class="workflow-step workflow-step--active">
+                <span class="workflow-number">
+                    03
+                </span>
+                <div>
+                    <strong>TRANSFORM</strong>
+                    <small>Clean &amp; process</small>
+                </div>
+            </div>
+            <div class="workflow-arrow" aria-hidden="true">
+                ↓
+            </div>
+            <div class="workflow-step">
+                <span class="workflow-number">
+                    04
+                </span>
+                <div>
+                    <strong>STORE</strong>
+                    <small>Reliable datasets</small>
+                </div>
+            </div>
+            <div class="workflow-arrow" aria-hidden="true">
+                ↓
+            </div>
+            <div class="workflow-step">
+                <span class="workflow-number">
+                    05
+                </span>
+                <div>
+                    <strong>ANALYZE</strong>
+                    <small>Insights &amp; decisions</small>
+                </div>
+            </div>
+        </div>
+        <p class="workflow-note">
+            Turning messy data into something
+            useful, reliable, and scalable.
+        </p>
+    </div>
+
+</section>
+
+<section class="project-grid" aria-label="Selected projects">
+    {% for project in projects %}
+    <article class="project-card{% if project.featured %} project-card--featured{% endif %}">
+        <div class="project-card-top">
+            <span class="project-number">
+                {{ project.number }}
+            </span>
+            <span class="project-box-category">
+                {{ project.category }}
+            </span>
+        </div>
+        <h2 class="project-name">
+            {{ project.name }}
+        </h2>
+        <p class="project-description">
+            {{ project.description }}
+        </p>
+        <ul class="project-stack" aria-label="Technologies used">
+            {% for tech in project.stack %}
+            <li>
+                {{ tech }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% if project.github %}
+        <a class="project-link" href="{{ project.github }}" target="_blank" rel="noopener noreferrer"
+            aria-label="View {{ project.name }} on GitHub">
+            <span>View on GitHub</span>
+            <span aria-hidden="true">&rarr;</span>
+        </a>
+        {% endif %}
+    </article>
+    {% endfor %}
+</section>
+{% endblock content %}
