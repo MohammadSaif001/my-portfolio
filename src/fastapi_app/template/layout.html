@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
-    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=9">
 
 </head>
 
@@ -19,14 +19,10 @@
     <header class="about-header">
         <a class="logo" href="/" aria-label="Saif home">SAIF</a>
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="/work">WORK</a>
-            <a href="/about">ABOUT</a>
-            <a href="/connect">CONTACT</a>
-            <div class="actions">
-                {% if request.url.path not in ["/", "/home"] %}
-                <a class="about-home" href="/">Home <span aria-hidden="true">&rarr;</span></a>
-            </div>
-            {% endif %}
+            <a href="/" {% if request.url.path in ["/", "/home"] %}aria-current="page"{% endif %}>HOME</a>
+            <a href="/work" {% if request.url.path == "/work" %}aria-current="page"{% endif %}>WORK</a>
+            <a href="/about" {% if request.url.path == "/about" %}aria-current="page"{% endif %}>ABOUT</a>
+            <a href="/connect" {% if request.url.path == "/connect" %}aria-current="page"{% endif %}>CONNECT</a>
         </nav>
     </header>
 

@@ -1,11 +1,9 @@
 from pathlib import Path
-from typing import Any
-
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from .detail import about, connect, projects
+from .detail import about, connect
 app = FastAPI()
 
 app.mount(
@@ -42,14 +40,11 @@ def get_about(request: Request) -> str:
 
 
 @app.get("/work")
-def get_data(request: Request) -> str:
+def get_work(request: Request) -> str:
     return templates.TemplateResponse(
         request, 
         "mywork.html",
-        {
-            "projects": projects, 
-            "title": "My Work"
-        }
+        {"title": "My Work"}
     )
 
 
