@@ -4,15 +4,20 @@
     <div class="about-copy">
         <p class="eyebrow">A LITTLE ABOUT ME</p>
         <h1 id="about-title">Curious by nature. Building for what’s next.</h1>
+        <p class="about-meta"><span aria-hidden="true">01</span> CSE STUDENT · LUCKNOW, INDIA</p>
         {% for pragraph in about %}
         <p class="about-intro">{{ pragraph }}</p>
         {% endfor %}
 
-        <a class="btn about-cta" href="/">Explore the portfolio <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn about-cta" href="/work">Explore my work <span aria-hidden="true">&rarr;</span></a>
     </div>
-    <aside class="about-note" aria-label="Areas of interest" tabindex="0">
-        <span class="about-mark" aria-hidden="true">&gt;_</span>
+    <aside class="about-note" aria-label="Areas of interest">
+        <div class="about-note-heading">
+            <span class="about-mark" aria-hidden="true">&gt;_</span>
+            <span class="about-note-kicker">FOCUS AREAS <b>04</b></span>
+        </div>
         <h2>What I’m exploring</h2>
+        <p class="about-note-copy">Topics I’m learning through hands-on projects and practice.</p>
         <ul class="interest-list">
             <li><span>01</span> Data engineering</li>
             <li><span>02</span> Networking</li>

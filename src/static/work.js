@@ -363,10 +363,10 @@ const projects = [
     detailPanel.setAttribute("aria-hidden", "false");
     detailPanel.classList.add("is-entering");
     explorer.classList.add("is-open");
-  if (window.matchMedia("(max-width: 900px)").matches) {
-    projectGrid.inert = true;
-    document.body.classList.add("project-detail-open");
-  }
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      projectGrid.inert = true;
+      document.body.classList.add("project-detail-open");
+    }
     void detailPanel.offsetWidth;
     playFlip(firstPositions);
     requestAnimationFrame(() => {
@@ -402,7 +402,7 @@ const projects = [
     detailPanel.setAttribute("aria-hidden", "true");
     detailPanel.classList.remove("is-entering", "is-content-swapping", "is-switching");
     explorer.classList.remove("is-closing");
-  document.body.classList.remove("project-detail-open");
+    document.body.classList.remove("project-detail-open");
     projectGrid.inert = false;
     activeProject = null;
     activeTileButton = null;

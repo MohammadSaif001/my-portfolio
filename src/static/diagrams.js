@@ -315,23 +315,23 @@
   const registry = {
     lakehouse: {
       svg: lakehouse,
-      note: "Moving dashes show the implemented data flow. Dotted lines are read-only checks or development integrations.",
+      note: "Synthetic data moves through Bronze and validated Silver.",
     },
     warehouse: {
       svg: warehouse,
-      note: "Quality checks run against each layer, and the FastAPI dashboard reports run health and data quality.",
+      note: "CRM and ERP sources become a Gold star schema.",
     },
     scraper: {
       svg: scraper,
-      note: "The browser loops through result pages, then listings are parsed, deduplicated, and exported.",
+      note: "Search, parse, deduplicate, then export listings.",
     },
     browser: {
       svg: browser,
-      note: "The loop repeats for every Reel, using that Reel’s own duration as the wait time.",
+      note: "Each Reel is timed before the browser scrolls again.",
     },
     terminal: {
       svg: terminal,
-      note: "Illustrative replay of the loader: percentage, text progress bar, then the banner.",
+      note: "The progress bar fills before the completion banner appears.",
     },
   };
 

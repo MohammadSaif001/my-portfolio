@@ -3,19 +3,16 @@ from typing import Any
 
 about: list[str] = [
     (
-        "Hi, I’m Mohammad Saif, a Computer Science and Engineering "
-        "student at Integral University in Lucknow, focused on learning "
-        "how reliable data systems are designed and built."
+        "I'm Mohammad Saif, a final-year Computer Science and Engineering "
+        "student at Integral University, Lucknow, focused on data engineering."
     ),
     (
-        "My current work revolves around data engineering — building "
-        "ELT pipelines, working with Python and SQL, processing data with "
-        "PySpark, and exploring systems such as Delta Lake and MySQL."
+        "I build ELT pipelines and data workflows using Python, SQL, PySpark, "
+        "Delta Lake, and MySQL."
     ),
     (
-        "I learn by building. Each project is an opportunity to understand "
-        "a system more deeply, find what breaks, and improve the way data "
-        "moves from raw sources to something useful."
+        "I'm passionate about building reliable, efficient data solutions "
+        "through hands-on projects."
     ),
 ]
 connect: list[dict[str, str]] = [

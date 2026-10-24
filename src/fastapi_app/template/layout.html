@@ -11,11 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
-    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=9">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}?v=12">
 
 </head>
 
-<body>
+<body id="page-top">
     <header class="about-header">
         <a class="logo" href="/" aria-label="Saif home">SAIF</a>
         <nav class="site-nav" aria-label="Main navigation">
@@ -33,7 +33,9 @@
     <footer class="about-footer">
         <span>MOHAMMAD SAIF</span>
         <span>Always learning, always building.</span>
+        <a class="back-to-top" href="#page-top">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
+
 </body>
 
 </html>
