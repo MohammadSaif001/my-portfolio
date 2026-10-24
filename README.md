@@ -13,7 +13,7 @@ Install the locked dependencies and start the development server:
 
 ```bash
 uv sync
-uv run fastapi dev src/fastapi_app/main.py
+uv run fastapi dev src/app.py
 ```
 
 Open <http://127.0.0.1:8000>.
@@ -21,7 +21,7 @@ Open <http://127.0.0.1:8000>.
 You can also start the app with Uvicorn:
 
 ```bash
-uv run uvicorn fastapi_app.main:app --reload --app-dir src
+uv run uvicorn src.app:app --reload
 ```
 
 ## Pages
@@ -41,7 +41,8 @@ uv run uvicorn fastapi_app.main:app --reload --app-dir src
 ├── uv.lock
 ├── README.md
 └── src/
-    ├── fastapi_app/
+    ├── app.py                # Entry point (imports the FastAPI app)
+    ├── content/
     │   ├── __init__.py       # Package initializer
     │   ├── main.py           # FastAPI app, routes, and static/template setup
     │   ├── content.py        # About and contact page data

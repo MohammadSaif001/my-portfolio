@@ -2791,3 +2791,62 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--green-dark);
 }
+
+/* Mobile: stop the hero and About sections from being vertically centered in a full-height box. */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+    align-content: start;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-feature {
+    min-height: 0;
+    align-items: start;
+  }
+}
+.site-nav > a.nav-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border: var(--border);
+    background: var(--green);
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+  
+  .site-nav > a.nav-resume::after {
+    display: none;
+  }
+  
+  .site-nav > a.nav-resume:hover,
+  .site-nav > a.nav-resume:focus-visible {
+    color: var(--ink);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  
+  .nav-resume svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 150ms ease;
+  }
+  
+  .nav-resume:hover svg,
+  .nav-resume:focus-visible svg {
+    transform: translate(2px, -2px);
+  }
+  
+  @media (max-width: 480px) {
+    .site-nav > a.nav-resume {
+      padding: 6px 8px;
+      box-shadow: 2px 2px 0 var(--ink);
+    }
+  }

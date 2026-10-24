@@ -4,7 +4,7 @@ const projects = [
       number: "01",
       title: "ELT-LAKEHOUSE",
       category: "Data Engineering",
-      description: "Synthetic commerce data into validated Delta tables.",
+      description: "Synthetic e-commerce data into validated Bronze and Silver Delta tables, with quarantine for bad records.",
       overview:
         "A configurable e-commerce data engineering project that generates synthetic Olist-style datasets, ingests them with Spark, and stores them as Delta tables. The implemented pipeline covers Bronze ingestion and Silver validation.",
       problem:
@@ -18,7 +18,7 @@ const projects = [
       outcomes: [
         "Bronze and Silver Delta layers are implemented.",
         "Invalid records can be isolated in quarantine tables.",
-        "Kafka, Airflow, dbt, and Gold loading are present as development integrations.",
+        "The Gold layer and orchestration are planned next.",
       ],
       stack: ["Python", "PySpark", "Delta Lake", "Flask"],
       visual: "lakehouse",
@@ -32,7 +32,7 @@ const projects = [
       number: "02",
       title: "CRM & ERP ELT PIPELINE",
       category: "Data Engineering",
-      description: "Six source files transformed into dimensions and a sales fact.",
+      description: "Six CRM and ERP files into Bronze, Silver and Gold MySQL layers with a sales fact table.",
       overview:
         "A Python and MySQL ELT workflow that combines six CRM and ERP CSV files into Bronze, Silver, and Gold layers. The Gold layer prepares customer and product dimensions and a sales fact table.",
       problem:
@@ -40,7 +40,7 @@ const projects = [
       flow: ["CRM + ERP CSVs", "Bronze", "Silver", "Gold + dashboard"],
       features: [
         "Tracks source-file ingestion and supports repeatable pipeline runs.",
-        "Checks nulls, duplicate keys, row counts, and foreign-key integrity.",
+        "Checks nulls, duplicate keys, row counts, and foreign-key integrity, covered by Pytest unit and integration tests.",
         "Includes a FastAPI operations dashboard for run health and data quality.",
       ],
       outcomes: [
@@ -48,7 +48,7 @@ const projects = [
         "Separates raw ingestion, standardization, and analytics preparation by layer.",
         "Uses MySQL for the Bronze, Silver, and Gold databases.",
       ],
-      stack: ["Python", "MySQL", "SQL", "FastAPI"],
+      stack: ["Python", "MySQL", "SQL", "FastAPI", "Pytest"],
       visual: "warehouse",
       links: {
         github: "https://github.com/MohammadSaif001/crm-erp-elt-pipeline",
@@ -60,7 +60,7 @@ const projects = [
       number: "03",
       title: "LINKEDIN JOB SCRAPER",
       category: "Automation",
-      description: "Paged job listings, deduplicated and ready to export.",
+      description: "Playwright scraper that collects, deduplicates and exports job listings to CSV or JSON.",
       overview:
         "A command-line scraper that searches publicly available LinkedIn job listings by role and location, then exports job titles, companies, locations, and application links.",
       problem:

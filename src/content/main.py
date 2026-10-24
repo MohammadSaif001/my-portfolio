@@ -22,7 +22,10 @@ def home(request: Request) -> str:
     return templates.TemplateResponse(
         request,
         "home.html",
-        {"title": "Data Engineer Portfolio"},
+        {
+            "title": "Data Engineer Portfolio",
+            "description": "Mohammad Saif, a final-year CSE student building ELT pipelines with Python, PySpark, Delta Lake and MySQL.",
+        },
     )
 
 
@@ -34,6 +37,7 @@ def get_about(request: Request) -> str:
         {
             "about": about,
             "title": "About Me",
+            "description": "Final-year CSE student at Integral University, Lucknow, focused on data engineering.",
         },
     )
 
@@ -43,7 +47,10 @@ def get_work(request: Request) -> str:
     return templates.TemplateResponse(
         request,
         "work.html",
-        {"title": "My Work"},
+        {
+            "title": "My Work",
+            "description": "Data engineering projects: a Delta Lake ELT lakehouse, a CRM and ERP pipeline, and automation tools.",
+        },
     )
 
 
@@ -55,5 +62,6 @@ def get_connect(request: Request) -> str:
         {
             "connect": connect,
             "title": "Connect with Me",
+            "description": "Contact Mohammad Saif on LinkedIn, GitHub or email. Open to data engineering opportunities.",
         },
     )

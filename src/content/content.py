@@ -2,16 +2,22 @@
 
 about: list[str] = [
     (
-        "I'm Mohammad Saif, a final-year Computer Science and Engineering "
-        "student at Integral University, Lucknow, focused on data engineering."
+        "I'm Mohammad Saif, a final-year B.Tech student in Computer Science "
+        "and Engineering (Data Science and AI) at Integral University, Lucknow, "
+        "graduating in 2027 and focused on data engineering."
     ),
     (
-        "I build ELT pipelines and data workflows using Python, SQL, PySpark, "
-        "Delta Lake, and MySQL."
+        "I build ELT pipelines with Python, SQL, PySpark, Delta Lake, and "
+        "MySQL, using Bronze/Silver/Gold layers, data-quality checks, and "
+        "quarantine tables for bad records."
     ),
     (
-        "I'm passionate about building reliable, efficient data solutions "
-        "through hands-on projects."
+        "I'm looking for a data engineering role or internship where I can "
+        "keep building reliable, well-tested pipelines."
+    ),
+    (
+        "I won 1st Prize (team of 2) at Code Clash League, organised by "
+        "CodeClub, Dept. of CSE, Integral University."
     ),
 ]
 connect: list[dict[str, str]] = [
@@ -29,5 +35,10 @@ connect: list[dict[str, str]] = [
         "platform": "Email",
         "url": "mailto:mohammadsaif005421@gmail.com",
         "icon": "email",
+    },
+    {
+        "platform": "Resume",
+        "url": "/static/Mohammad_Saif_Resume.pdf",
+        "icon": "resume",
     },
 ]

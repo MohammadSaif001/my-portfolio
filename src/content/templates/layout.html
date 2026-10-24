@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="{{ description | default('Mohammad Saif, data engineering and software development portfolio.') }}">
+    <meta property="og:title" content="Mohammad Saif | {{ title | default('Portfolio') }}">
+    <meta property="og:description"
+        content="{{ description | default('Mohammad Saif, data engineering and software development portfolio.') }}">
+    <meta property="og:type" content="website">
     <title>{% if title %}Mohammad Saif | {{ title }}{% else %}Mohammad Saif | Portfolio{% endif %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +27,9 @@
             <a href="/work" {% if request.url.path == "/work" %}aria-current="page"{% endif %}>WORK</a>
             <a href="/about" {% if request.url.path == "/about" %}aria-current="page"{% endif %}>ABOUT</a>
             <a href="/connect" {% if request.url.path == "/connect" %}aria-current="page"{% endif %}>CONNECT</a>
+            <a class="nav-resume" href="/static/Mohammad_Saif_Resume.pdf" target="_blank" rel="noopener">
+                RESUME <span class="nav-arrow" aria-hidden="true">↗</span>
+            </a>
         </nav>
     </header>
 
@@ -32,7 +39,7 @@
 
     <footer class="about-footer">
         <span>MOHAMMAD SAIF</span>
-        <span>Always learning, always building.</span>
+        <span>Building reliable data pipelines.</span>
         <a class="back-to-top" href="#page-top">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
 
