@@ -2,8 +2,12 @@
 {% block content %}
 <div class="hero">
     <section class="intro">
-        <p class="greeting">Hi, I’m Saif, a</p>
-        <h1>DATA<br />ENGINEER</h1>
+        <p class="greeting">Hi, I’m Saif, <span id="tw-article">a</span></p>
+        <h1 class="typewriter">
+            <span class="sr-only">Data Engineer</span>
+            <span class="tw-ghost" aria-hidden="true">DATA<br />ENGINEER</span>
+            <span class="tw-live" id="tw-live" aria-hidden="true">DATA<br />ENGINEER</span>
+        </h1>
         <p class="lead">
             I build ELT pipelines that turn raw data into
             clean, validated tables, using Python, PySpark,
@@ -119,4 +123,54 @@
         <a class="btn" href="connect"><span aria-hidden="true">&gt;</span> Let’s Connect</a>
     </div>
 </div>
+<script>
+    (function () {
+      const art = document.getElementById("tw-article");
+      const live = document.getElementById("tw-live");
+      if (!art || !live || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      const jitter = (base, spread = 0.35) => base * (1 + (Math.random() * 2 - 1) * spread);
+    
+      function caret(el, waiting = false) {
+        for (const e of [art, live]) {
+          e.classList.toggle("has-caret", e === el);
+          e.classList.toggle("is-waiting", e === el && waiting);
+        }
+      }
+      async function type(el, text, speed) {
+        caret(el);
+        for (const ch of text) {
+          el.textContent += ch;
+          await sleep(jitter(speed) + (ch === " " || ch === "\n" ? 70 : 0));
+        }
+      }
+      async function erase(el, count, start, end) {
+        caret(el);
+        const n = Math.min(count, el.textContent.length);
+        for (let i = 0; i < n; i++) {
+          el.textContent = el.textContent.slice(0, -1);
+          await sleep(start + (end - start) * (i / Math.max(n - 1, 1)));
+        }
+      }
+      async function wait(el, ms) { caret(el, true); await sleep(ms); }
+    
+      (async () => {
+        if (document.fonts && document.fonts.ready) {
+          await Promise.race([document.fonts.ready, sleep(1500)]);
+        }
+        art.textContent = "";
+        live.textContent = "";
+        await wait(art, 800);
+        await type(art, "an", 150);
+        await type(live, "ENGINEER..", 100);
+        await wait(live, 1100);
+        await erase(live, 99, 90, 35);   // backspace speeds up
+        await erase(art, 1, 160, 160);   // "an" -> "a"
+        await wait(art, 450);
+        await type(live, "DATA\nENGINEER", 100);
+        caret(null);
+      })();
+    })();
+    </script>
 {% endblock content %}

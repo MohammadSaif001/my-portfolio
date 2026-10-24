@@ -2850,3 +2850,32 @@ html {
       box-shadow: 2px 2px 0 var(--ink);
     }
   }
+.typewriter { display: grid; }
+.typewriter > * { grid-area: 1 / 1; }
+.tw-ghost { visibility: hidden; }
+.tw-live { white-space: pre-line; }
+
+.tw-live.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 0.07em;
+  height: 0.8em;
+  margin-left: 0.06em;
+  background: currentColor;
+  animation: tw-blink 1s steps(1) infinite;
+}
+.has-caret::after {
+    content: "";
+    display: inline-block;
+    width: 0.07em;
+    height: 0.8em;
+    margin-left: 0.06em;
+    margin-right: -0.13em;   /* cancels the cursor's width so text never shifts */
+    vertical-align: -0.05em;
+    background: currentColor;
+}
+  
+.has-caret.is-waiting::after {
+    animation: tw-blink 1s steps(1) infinite;
+}
+@keyframes tw-blink { 50% { opacity: 0; } }
