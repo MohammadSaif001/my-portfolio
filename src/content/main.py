@@ -1,9 +1,11 @@
 from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from .detail import about, connect
+from .content import about, connect
+
 app = FastAPI()
 
 app.mount(
@@ -12,10 +14,7 @@ app.mount(
     name="static",
 )
 
-templates = Jinja2Templates(directory=Path(__file__).parent / "template")
-
-
-
+templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
 
 @app.get("/", include_in_schema=False)
 @app.get("/home", include_in_schema=False)
@@ -42,19 +41,19 @@ def get_about(request: Request) -> str:
 @app.get("/work")
 def get_work(request: Request) -> str:
     return templates.TemplateResponse(
-        request, 
-        "mywork.html",
-        {"title": "My Work"}
+        request,
+        "work.html",
+        {"title": "My Work"},
     )
 
 
 @app.get("/connect")
 def get_connect(request: Request) -> str:
     return templates.TemplateResponse(
-        request, 
-        "connect.html", 
+        request,
+        "connect.html",
         {
-            "connect": connect, 
-            "title": "Connect with Me"
-        }
+            "connect": connect,
+            "title": "Connect with Me",
+        },
     )

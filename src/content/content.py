@@ -1,4 +1,3 @@
-from typing import Any
 
 
 about: list[str] = [
