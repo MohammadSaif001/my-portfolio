@@ -58,7 +58,7 @@
     `<rect class="dg-box dg-mint" x="${x}" y="${y}" width="16" height="11"/>` +
     text("dg-note", x + 24, y + 9, "implemented", "start") +
     `<rect class="dg-box dg-ghost-swatch" x="${x}" y="${y + 20}" width="16" height="11"/>` +
-    text("dg-note", x + 24, y + 29, "in development", "start") +
+    text("dg-note", x + 24, y + 29, "planned", "start") +
     `</g>`;
 
   /* ---------- 01 · ELT-Lakehouse: medallion flow with a validation gate ---------- */
@@ -77,10 +77,10 @@
         `</g>`,
       box({ x: 650, y: 112, w: 104, h: 72, title: "Silver", sub: "validated Delta", tone: "silver", i: 6 }),
       box({ x: 537, y: 252, w: 100, h: 48, title: "Quarantine", sub: "invalid rows", tone: "warn", i: 7 }),
-      box({ x: 650, y: 252, w: 104, h: 48, title: "Gold + dbt", sub: "dev integration", ghost: true, i: 8 }),
-      box({ x: 268, y: 252, w: 136, h: 48, title: "Kafka · Airflow", sub: "dev integrations", ghost: true, i: 8 }),
+      box({ x: 650, y: 252, w: 104, h: 48, title: "Gold + dbt", sub: "star schema", tone: "mint", i: 8 }),
+      box({ x: 268, y: 252, w: 136, h: 48, title: "Kafka · Airflow", sub: "planned", ghost: true, i: 8 }),
       box({
-        x: 420, y: 14, w: 334, h: 48, title: "Flask dashboard",
+        x: 420, y: 14, w: 334, h: 48, title: "FastAPI dashboard",
         sub: "read-only · health · checks · storage · logs", tone: "green", i: 9,
       }),
       text("dg-note", 597, 226, "fail", "start"),
@@ -92,7 +92,7 @@
       edge("M524 148 H547", { i: 5 }),
       edge("M627 148 H650", { i: 6 }),
       edge("M587 188 V252", { i: 7 }),
-      edge("M702 184 V252", { ref: true, i: 8 }),
+      edge("M702 184 V252", { i: 8 }),
       edge("M336 252 V176", { ref: true, i: 8 }),
       edge("M472 62 V112", { ref: true, i: 9 }),
       edge("M702 62 V112", { ref: true, i: 9 }),
@@ -315,7 +315,7 @@
   const registry = {
     lakehouse: {
       svg: lakehouse,
-      note: "Synthetic data moves through Bronze and validated Silver.",
+      note: "Synthetic data moves through Bronze and validated Silver into a dbt Gold star schema.",
     },
     warehouse: {
       svg: warehouse,
